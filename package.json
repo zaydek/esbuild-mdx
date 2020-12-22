@@ -1,0 +1,20 @@
+{
+	"name": "async-mdx-test",
+	"license": "MIT",
+	"scripts": {
+		"watch": "yarn nodemon --exec 'node esbuild.js' --ext ts,tsx"
+	},
+	"dependencies": {
+		"@mdx-js/react": "^1.6.22",
+		"react": "^17.0.1",
+		"react-dom": "^17.0.1"
+	},
+	"devDependencies": {
+		"@mdx-js/mdx": "^1.6.22",
+		"@types/mdx-js__react": "^1.5.3",
+		"@types/react": "^17.0.0",
+		"@types/react-dom": "^17.0.0",
+		"esbuild": "^0.8.26",
+		"nodemon": "^2.0.6"
+	}
+}
