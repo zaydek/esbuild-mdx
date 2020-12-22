@@ -1,4 +1,4 @@
-const { build, transform } = require("esbuild")
+const { build } = require("esbuild")
 const fs = require("fs")
 const mdx = require("@mdx-js/mdx")
 
@@ -14,10 +14,8 @@ const mdxPlugin = {
 		build.onLoad({ filter: /\.mdx$/ }, async args => {
 			const text = await fs.promises.readFile(args.path, "utf8")
 
-			// NOTE: Use `(await ...).code`.
 			let jsx = ""
 			jsx = await mdx(text)
-			jsx = (await transform(jsx, { loader: "jsx" })).code
 			jsx = missingImportStatements + "\n\n" + jsx
 			return {
 				contents: jsx,
