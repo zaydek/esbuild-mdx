@@ -1,6 +1,6 @@
 {
 	"name": "esbuild-mdx",
-	"version": "0.0.2",
+	"version": "0.1.0",
 	"main": "index.js",
 	"repository": "https://github.com/zaydek/esbuild-mdx.git",
 	"license": "MIT",
