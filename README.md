@@ -44,6 +44,8 @@
 
 See [esbuild-mdx-example](https://github.com/zaydek/esbuild-mdx-example) for a reference implementation.
 
+**Note:** `react`, `react-dom`, and `@mdx-js/react` are peer dependencies.
+
 ## License
 
 Licensed as MIT open source.
