@@ -42,7 +42,7 @@
   ReactDOM.render(<App />, document.getElementById("root"))
   ```
 
-See [esbuild-mdx-example](https://github.com/zaydek/esbuild-mdx) for a reference implementation.
+See [esbuild-mdx-example](https://github.com/zaydek/esbuild-mdx-example) for a reference implementation.
 
 ## License
 
