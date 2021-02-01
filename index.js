@@ -12,13 +12,13 @@ import { mdx } from "@mdx-js/react"
 // import statements are manually added.
 //
 // This implementation is roughly based on the @mdx-js/mdx: https://github.com/mdx-js/mdx/blob/main/packages/loader/index.js.
-module.exports = {
+module.exports = (options) => ({
 	name: "esbuild-mdx",
 	setup(build) {
 		build.onLoad({ filter: /\.mdx?$/ }, async args => {
 			const text = await fs.promises.readFile(args.path, "utf8")
 
-			let contents = await mdx(text)
+			let contents = await mdx(text, options)
 			contents = missingImportStatements + "\n\n" + contents
 			return {
 				contents,
@@ -26,4 +26,4 @@ module.exports = {
 			}
 		})
 	},
-}
+})
