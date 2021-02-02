@@ -2,55 +2,50 @@
 
 `esbuild-mdx` resolves `.md` and `.mdx`-delimited files as markdown components you can render in your React components.
 
-1. Add `esbuild-mdx` and `@mdx-js/react` as developer dependencies:
+- Add dependencies:
 
-```sh
-yarn add --dev @mdx-js/react esbuild-mdx
-```
+  ```sh
+  yarn add react react-dom
+  yarn add --dev @mdx-js/react esbuild-mdx
+  ```
 
-2. Add `react` and `react-dom` as dependencies:
+- Create [`esbuild.js`](https://github.com/zaydek/esbuild-mdx-example/blob/master/esbuild.js):
 
-```sh
-yarn add react react-dom
-```
+  ```js
+  require("esbuild").build({
+  	// ...
+  	plugins: [require("esbuild-mdx")()],
+  	// ...
+  })
+  ```
 
-3. Create [`esbuild.js`](https://github.com/zaydek/esbuild-mdx-example/blob/master/esbuild.js):
+- Create a `.md` or `.mdx`-delimited file:
 
-```js
-require("esbuild").build({
-	// ...
-	plugins: [require("esbuild-mdx")()],
-	// ...
-})
-```
+  ```md
+  # Hello, world rendered by `esbuild-mdx`!
+  ```
 
-4. Create a `.md` or `.mdx`-delimited file:
+- Import your `.md` or `.mdx` file and render as a React component:
 
-```md
-# Hello, world rendered by `esbuild-mdx`!
-```
+  ```jsx
+  import React from "react"
+  import ReactDOM from "react-dom"
 
-5. Import your `.md` or `.mdx` file and render as a React component:
+  import MarkdownComponent from "./example.md"
 
-```jsx
-import React from "react"
-import ReactDOM from "react-dom"
+  function App() {
+  	return (
+  		<div>
+  			<h1>
+  				Hello, world rendered by <code>React</code>!
+  			</h1>
+  			<MarkdownComponent />
+  		</div>
+  	)
+  }
 
-import MarkdownComponent from "./example.md"
-
-function App() {
-	return (
-		<div>
-			<h1>
-				Hello, world rendered by <code>React</code>!
-			</h1>
-			<MarkdownComponent />
-		</div>
-	)
-}
-
-ReactDOM.render(<App />, document.getElementById("root"))
-```
+  ReactDOM.render(<App />, document.getElementById("root"))
+  ```
 
 See [esbuild-mdx-example](https://github.com/zaydek/esbuild-mdx-example) for a reference implementation.
 
