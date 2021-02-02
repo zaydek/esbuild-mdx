@@ -1,17 +1,27 @@
 # esbuild-mdx
 
-`esbuild-mdx` is a small plugin that resolves `.md` and `.mdx`-delimited files as markdown components you can render in your React components.
+`esbuild-mdx` resolves `.md` and `.mdx`-delimited files as markdown components you can render in your React components.
 
 - Add `esbuild-mdx` and `@mdx-js/react` as developer dependencies:
 
   ```sh
-  yarn add --dev esbuild-mdx @mdx-js/react
+  yarn add --dev @mdx-js/react esbuild-mdx
   ```
 
 - Add `react` and `react-dom` as dependencies:
 
   ```sh
   yarn add react react-dom
+  ```
+
+- Create [`esbuild.js`](https://github.com/zaydek/esbuild-mdx-example/blob/master/esbuild.js):
+
+  ```js
+  require("esbuild").build({
+  	// ...
+  	plugins: [require("esbuild-mdx")()],
+  	// ...
+  })
   ```
 
 - Create a `.md` or `.mdx`-delimited file:
