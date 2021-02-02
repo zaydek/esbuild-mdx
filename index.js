@@ -11,8 +11,8 @@ import { mdx } from "@mdx-js/react"
 // These files are then read from disk and parsed by @mdx-js/mdx. Finally,
 // import statements are manually added.
 //
-// This implementation is roughly based on the @mdx-js/mdx: https://github.com/mdx-js/mdx/blob/main/packages/loader/index.js.
-module.exports = (options) => ({
+// This implementation is roughly based on @mdx-js/mdx: https://github.com/mdx-js/mdx/blob/main/packages/loader/index.js.
+module.exports = options => ({
 	name: "esbuild-mdx",
 	setup(build) {
 		build.onLoad({ filter: /\.mdx?$/ }, async args => {
